@@ -34,8 +34,10 @@
         <div data-simplebar class="h-100">
             <div class="navbar-brand-box">
                 <a href="" class="logo">
+                <img src="imagen/lo.png" width="100px" height="100px" alt="">
+                 <!-- ver el logo, puede ser imagen o texto -->
                     <!-- va el logo, puede ser imagen o texto -->
-                    LOGO
+                    Chicco
                 </a>
             </div>
             <div id="sidebar-menu">
