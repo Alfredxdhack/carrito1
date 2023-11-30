@@ -1,22 +1,15 @@
-<?php
-include("include/conexion.php");
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos</title>
+    <title>Document</title>
     <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-    <?php
+    <?php 
     // Lenguaje en php
     include("include/menu.php");
 
@@ -28,40 +21,20 @@ include("include/conexion.php");
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <?php include("include/modal_frm_reg_categoria.php"); ?>
-                        <table id="basic-datatable" class="table dt-responsive nowrap">
-                            <thead>
-                                <th>Nro</th>
-                                <th>Categoria</th>
-                                
-
-
-
-                            </thead>
-                            <tbody>
-                                <?php
-
-                                $consulta = "SELECT * FROM categoria";
-                                $ejecutar = mysqli_query($conexion, $consulta);
-                                $contador = 0;
-
-                                while ($respuesta = mysqli_fetch_array($ejecutar)) {
-                                    $contador += 1;
-                                    echo "<tr>";
-                                    echo "<td>" . $contador . "</td>";
-                                    echo "<td>" . $respuesta['nombre'] . "</td>";
-                                    echo "<td><button class='btn btn-success'>Editar</button> <button class='btn btn-danger'>Eliminar</button></td>";
-
-                                    echo "</tr>";
-                                }
-
-                                ?>
-                            </tbody>
-                        </table>
-
+                        <h4>Registrar Categorias</h4>
                         <div class="card">
                             <div class="card-body">
+                                <form action="operaciones/registrar_usuario.php" method="POST">
+                                    <div class="form-group row">
+                                        <label class="col-lg-2 col-md-2 col-sm-12" >Nombre de la Categoria:</label>
+                                        <input type="text" name="ape_nom" class="form-control col-lg-10 col-md-10 col-sm-12" required>
+                                    </div>
 
+                                    <div class="form-group row">
+                                    <label class="col-lg-2 col-md-2 col-sm-12"></label>
+                                        <button type="submit" class="btn btn-danger">Guardar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -69,7 +42,7 @@ include("include/conexion.php");
             </div>
         </div>
     </div>
-    <!-- FIN DE CONTENIDO -->
+     <!-- FIN DE CONTENIDO -->
 
 
     <!-- jQuery  -->
